@@ -72,17 +72,20 @@
                 }
 
                 /* Hero Section */
-              .hero {
-                background-image: url('images/lights-prisms-effect-close-up.jpg'); /* Replace with the path to your image */
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                min-height: 100vh; /* Full viewport height */
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white; /* Text color to stand out against the background */
-              }
+                .hero {
+                    background-image: url('images/lights-prisms-effect-close-up.jpg');
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    min-height: 100vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    backdrop-filter: blur(150px) !important; /* Use !important in CSS, not HTML comments */
+                    -webkit-backdrop-filter: blur(150px); /* Webkit support for older browsers */
+                }
+
 
               .hero .container {
                 text-align: center;
@@ -110,6 +113,40 @@
               .hero .btn:hover {
                 background-color: #2A9558; /* Slightly darker green on hover */
               }
+                .highlighted-quote {
+                    background: linear-gradient(135deg, #e1bee7, #ffffff); /* Light lavender to white */
+
+
+                    border-radius: 8px; /* Rounded corners */
+                    border-left: 4px solid #3BB77E; /* Greenish border to emphasize the division */
+                    padding: 20px; /* Increased padding for better spacing */
+                    margin: 20px 0;
+                    font-style: italic; /* Italic style */
+                    color: #333; /* Text color */
+                    font-size: 1.5em; /* Increase the font size */
+                    text-align: center; /* Center the text */
+                    animation: fadeIn 2s; /* Animation effect */
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+                    transition: transform 0.3s; /* Smooth transition for scaling effect */
+                }
+
+                /* Animation keyframes */
+                @keyframes fadeIn {
+                    0% {
+                        opacity: 0; /* Start fully transparent */
+                        transform: translateY(20px); /* Start slightly below */
+                    }
+                    100% {
+                        opacity: 1; /* End fully opaque */
+                        transform: translateY(0); /* End at original position */
+                    }
+                }
+
+                /* Hover effect */
+                .highlighted-quote:hover {
+                    transform: scale(1.05); /* Slightly enlarge on hover */
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+                }
 
                 /* Sections */
                 section {
@@ -481,12 +518,23 @@
           <section id="home" class="hero">
             <div class="container">
               <div class="hero-content">
-                <h1> absolute water technologies has evolved into Aventa life sciences Pvt Ltd</h1>
+                <h1> A POSITIVE, JOYFUL ENCOUNTER WITH OUR WATER</h1>
+                  
               
                 <a href="#contact" class="btn">Get Started</a>
               </div>
             </div>
           </section>
+            
+            <div class="highlighted-quote">
+                <p>
+                      <q style="font-family: 'Quicksand', sans-serif; display: block; font-style: italic;"> <b>Absolute Water Technologies has evolved into Aventa Life Sciences Pvt Ltd.</b></q>
+                </p>
+                <ul>
+                    <li>200+ SUCCESSFUL INSTALLATIONS EVERY YEAR</li>
+                </ul>
+            </div>
+
 
 
             <section id="about">
@@ -782,6 +830,12 @@
 
               // Automatically slide every 2 seconds
               setInterval(autoSlide, 2000);
+              window.onload = function() {
+                  const quote = document.getElementById('quote');
+                  // Trigger the animation
+                  quote.style.opacity = '25'; // Make the quote visible
+                  quote.style.transform = 'translateY(0)'; // Move to original position
+              };
 
           </script>
           </body>
