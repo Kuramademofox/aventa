@@ -20,7 +20,7 @@
                 }
 
                 body {
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    font-family: poppins, sans-serif;
                     line-height: 1.6;
                     color: var(--text-color);
                 }
@@ -73,7 +73,7 @@
 
                 /* Hero Section */
               .hero {
-                background-image: url('your-background-image.jpg'); /* Replace with the path to your image */
+                background-image: url('images/lights-prisms-effect-close-up.jpg'); /* Replace with the path to your image */
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -100,7 +100,7 @@
 
               .hero .btn {
                 padding: 15px 30px;
-                background-color: #3BB77E;
+                background-color: #2c3e50;
                 color: white;
                 text-decoration: none;
                 border-radius: 5px;
@@ -190,23 +190,60 @@
                 }
 
                 /* Contact Section */
-                .contact-form {
-                    max-width: 600px;
-                    margin: 0 auto;
+                #contact {
+                    background-color: #f9f9f9;
+                    padding: 50px 0;
+                    text-align: center;
                 }
 
-                .contact-form input,
-                .contact-form textarea {
-                    width: 100%;
-                    padding: 0.8rem;
-                    margin-bottom: 1rem;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
+                #contact h2 {
+                    font-size: 36px;
+                    color: #3BB77E;
+                    margin-bottom: 20px;
                 }
 
-                .contact-form textarea {
-                    height: 150px;
+                .contact-info {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                 }
+
+                .contact-item {
+                    display: flex;
+                    align-items: center;
+                    font-size: 18px;
+                    margin: 15px 0;
+                }
+
+                .contact-item i {
+                    font-size: 24px;
+                    color: #3BB77E;
+                    margin-right: 15px;
+                }
+
+                .contact-item a {
+                    color: #3BB77E;
+                    text-decoration: none;
+                }
+
+                .contact-item a:hover {
+                    text-decoration: underline;
+                }
+
+                .contact-info p {
+                    margin: 0;
+                    font-size: 18px;
+                }
+
+                .contact-info p strong {
+                    color: #333;
+                }
+
+                .contact-info a:hover {
+                    color: #3498db;
+                }
+
+
 
                 /* Footer */
                 footer {
@@ -304,6 +341,41 @@
                     text-decoration: none;
                     cursor: pointer;
                 }
+                .projects-section {
+                  padding: 50px 0;
+                  background-color: #f4f4f4;
+                  overflow: hidden;
+                }
+
+                .projects-container {
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: center;
+                  white-space: nowrap;
+                  animation: scroll 20s linear infinite;
+                }
+                
+
+                .client-logo {
+                  margin-right: 30px; /* Controls spacing between logos */
+                  flex-shrink: 0;
+                }
+
+                .client-logo img {
+                  max-width: 150px;
+                  height: auto;
+                  vertical-align: middle; /* Align logos centrally */
+                }
+
+                @keyframes scroll {
+                  0% {
+                    transform: translateX(100%);
+                  }
+                  100% {
+                    transform: translateX(-100%);
+                  }
+                }
+
             </style>
         </head>
         <body>
@@ -311,26 +383,26 @@
 
             <header>
                 <nav class="container">
-                    <div class="logo">Company Logo</div>
+                    <div class="logo">Aventa Life Sciences</div>
                     <ul class="nav-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#team">Team</a></li>
+                        <li><a href="#team">Our Services</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
             </header>
 
-      <section id="home" class="hero" style="background-image: url('your-image-url.jpg'); background-size: cover; background-position: center;">
-    <div class="container">
-        <div class="hero-content">
-            <h1>Welcome to Our Company</h1>
-            <p>We create innovative solutions for your business needs</p>
-            <a href="#contact" class="btn">Get Started</a>
-        </div>
-    </div>
-</section>
+          <section id="home" class="hero">
+            <div class="container">
+              <div class="hero-content">
+                <h1>Welcome to Our Company</h1>
+                <p>We create innovative solutions for your business needs</p>
+                <a href="#contact" class="btn">Get Started</a>
+              </div>
+            </div>
+          </section>
 
 
             <section id="about">
@@ -363,20 +435,20 @@
 
             <section id="team">
                 <div class="container">
-                    <h2>Our Team</h2>
+                    <h2>Our Services</h2>
                     <div class="team-members">
                         <div class="team-member">
-                            <img src="/api/placeholder/200/200" alt="Team Member 1" class="lazy" data-src="/api/placeholder/200/200">
+                            <img src="/api/placeholder/200/200" alt="Team Member 1" >
                             <h3>John Doe</h3>
                             <p>CEO & Founder</p>
                         </div>
                         <div class="team-member">
-                            <img src="/api/placeholder/200/200" alt="Team Member 2" class="lazy" data-src="/api/placeholder/200/200">
+                            <img src="/api/placeholder/200/200" alt="Team Member 2" >
                             <h3>Jane Smith</h3>
                             <p>Lead Designer</p>
                         </div>
                         <div class="team-member">
-                            <img src="/api/placeholder/200/200" alt="Team Member 3" class="lazy" data-src="/api/placeholder/200/200">
+                            <img src="/api/placeholder/200/200" alt="Team Member 3">
                             <h3>Mike Johnson</h3>
                             <p>Lead Developer</p>
                         </div>
@@ -394,36 +466,60 @@
                   <h2>What Our Clients Say</h2>
                   <div class="testimonial-container testimonials-container">
                     <div class="testimonial">
-                      <img src="/api/placeholder/80/80" alt="Client 1" class="lazy" data-src="/api/placeholder/80/80">
+                        <img src="images/allu-arjun.jpg" alt="Client 1">
+
                       <p>"Great service, highly recommend!"</p>
-                      <h4>Client 1</h4>
+                      <h4>Allu Arjun </h4>
                     </div>
                     <div class="testimonial">
-                      <img src="/api/placeholder/80/80" alt="Client 2" class="lazy" data-src="/api/placeholder/80/80">
+                        <img src="images/allu-arjun.jpg" alt="Client 1">
+
                       <p>"Fast and reliable every time."</p>
-                      <h4>Client 2</h4>
+                      <h4>Kotha Prabhakar reddy</h4>
                     </div>
                     <div class="testimonial">
-                      <img src="/api/placeholder/80/80" alt="Client 3" class="lazy" data-src="/api/placeholder/80/80">
+                        <img src="images/allu-arjun.jpg" alt="Client 1">
                       <p>"Exceptional customer support."</p>
-                      <h4>Client 3</h4>
+                      <h4>Ruhee Naaz</h4>
                     </div>
                   </div>
                 </div>
             </section>
 
+            <section id="projects" class="projects-section">
+              <div class="projects-container">
+                <div class="client-logo">
+                  <img src="client1-logo.png" alt="Client 1">
+                </div>
+                <div class="HALL MARK">
+                  <img src="https://media.licdn.com/dms/image/v2/C4D0BAQFKo_um8Ku_kA/company-logo_200_200/company-logo_200_200/0/1631367600911?e=2147483647&v=beta&t=5Pk2hnKY0T31QGQSDs1LmaYcnB7XdEyLQmCsxOUzRP8" alt="Client 2" style="border-radius: 10px;">
+                </div>
+                <div class="client-logo">
+                  <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Faikaa.villas%2F&psig=AOvVaw2aPJN0t56D-RaSF-8wbURJ&ust=1728627490752000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPD4l6-Vg4kDFQAAAAAdAAAAABAE" alt="Client 3">
+                </div>
+                <div class="client-logo">
+                  <img src="client4-logo.png" alt="Client 4">
+                </div>
+                <div class="client-logo">
+                  <img src="client5-logo.png" alt="Client 5">
+                </div>
+                <!-- Add more logos as needed -->
+              </div>
+            </section>
+
             <section id="contact">
                 <div class="container">
                     <h2>Contact Us</h2>
-                    <form class="contact-form">
-                        <input type="text" placeholder="Name" required>
-                        <input type="email" placeholder="Email" required>
-                        <input type="text" placeholder="Subject" required>
-                        <textarea placeholder="Message" required></textarea>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+                    <div class="contact-info">
+                        <p><strong>Location:</strong> Hyderabad, India</p>
+                        <p><strong>Email:</strong> <a href="mailto:contact@vjm-sol.com">contact@vjm-sol.com</a></p>
+                        <p><strong>Phone:</strong> +91 1234567890</p>
+                        <p><strong>Office Hours:</strong> Mon-Fri, 9:00 AM - 6:00 PM</p>
+                        <p><strong>Website:</strong> <a href="https://www.vjm-sol.com" target="_blank">https://aventalifesciences.com/</a></p>
+                    </div>
                 </div>
             </section>
+
 
             <footer>
                 <div class="container">
@@ -509,23 +605,7 @@
 
             images.forEach(img => imageObserver.observe(img));
 
-            // Newsletter modal
-            const modal = document.getElementById('newsletterModal');
-            const closeBtn = document.getElementsByClassName('close')[0];
 
-            setTimeout(() => {
-              modal.style.display = 'block';
-            }, 5000);
-
-            closeBtn.onclick = () => {
-              modal.style.display = 'none';
-            };
-
-            window.onclick = (event) => {
-              if (event.target == modal) {
-                modal.style.display = 'none';
-              }
-            };
 
             // Form submission with fetch API
             const contactForm = document.querySelector('.contact-form');
