@@ -4,7 +4,8 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Modern Company Website</title>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
             <style>
                 :root {
                     --primary-color: #3498db;
@@ -73,46 +74,94 @@
 
                 /* Hero Section */
                 .hero {
-                    background-image: url('images/lights-prisms-effect-close-up.jpg');
-                    background-size: cover;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    min-height: 100vh;
+                    position: relative;
+                    height: 100vh;
                     display: flex;
-                    align-items: center;
                     justify-content: center;
+                    align-items: center;
+                    text-align: center;
                     color: white;
-                    backdrop-filter: blur(150px) !important; /* Use !important in CSS, not HTML comments */
-                    -webkit-backdrop-filter: blur(150px); /* Webkit support for older browsers */
+                }
+
+                .video-container {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    z-index: -1;
+                }
+
+                video {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    opacity: 0.8; /* Adjust this for transparency */
                 }
 
 
-              .hero .container {
-                text-align: center;
-              }
 
-              .hero h1 {
-                font-size: 48px;
-                margin-bottom: 20px;
-              }
+                  .hero .container {
+                    text-align: center;
+                  }
 
-              .hero p {
-                font-size: 20px;
-                margin-bottom: 30px;
-              }
+                  .hero h1 {
+                    font-size: 48px;
+                    margin-bottom: 20px;
+                  }
 
-              .hero .btn {
-                padding: 15px 30px;
-                background-color: #2c3e50;
-                color: white;
-                text-decoration: none;
-                border-radius: 5px;
-                transition: background-color 0.3s;
-              }
+                  .hero p {
+                    font-size: 20px;
+                    margin-bottom: 30px;
+                  }
 
-              .hero .btn:hover {
-                background-color: #2A9558; /* Slightly darker green on hover */
-              }
+                  .hero .btn {
+                    padding: 15px 30px;
+                    background-color: #2c3e50;
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    transition: background-color 0.3s;
+                  }
+
+                  .hero .btn:hover {
+                    background-color: #2A9558; /* Slightly darker green on hover */
+                  }
+                    .highlighted-quote {
+                        background: linear-gradient(135deg, #e1bee7, #ffffff); /* Light lavender to white */
+
+
+                        border-radius: 8px; /* Rounded corners */
+                        border-left: 4px solid #3BB77E; /* Greenish border to emphasize the division */
+                        padding: 20px; /* Increased padding for better spacing */
+                        margin: 20px 0;
+                        font-style: italic; /* Italic style */
+                        color: #333; /* Text color */
+                        font-size: 1.5em; /* Increase the font size */
+                        text-align: center; /* Center the text */
+                        animation: fadeIn 2s; /* Animation effect */
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+                        transition: transform 0.3s; /* Smooth transition for scaling effect */
+                    }
+
+                    /* Animation keyframes */
+                    @keyframes fadeIn {
+                        0% {
+                            opacity: 0; /* Start fully transparent */
+                            transform: translateY(20px); /* Start slightly below */
+                        }
+                        100% {
+                            opacity: 1; /* End fully opaque */
+                            transform: translateY(0); /* End at original position */
+                        }
+                    }
+
+                    /* Hover effect */
+                    .highlighted-quote:hover {
+                        transform: scale(1.05); /* Slightly enlarge on hover */
+                        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+                    }
                 .highlighted-quote {
                     background: linear-gradient(135deg, #e1bee7, #ffffff); /* Light lavender to white */
 
@@ -515,16 +564,21 @@
                 </nav>
             </header>
 
-          <section id="home" class="hero">
-            <div class="container">
-              <div class="hero-content">
-                <h1> A POSITIVE, JOYFUL ENCOUNTER WITH OUR WATER</h1>
-                  
-              
-                <a href="#contact" class="btn">Get Started</a>
-              </div>
-            </div>
-          </section>
+            <section id="home" class="hero">
+                <div class="video-container">
+                    <video autoplay muted loop playsinline>
+                        <source src="images/demo.mp4" type="video/mp4">
+                        <!-- Use a local file for background video. YouTube embeds cannot directly play as a background video in HTML5. -->
+                    </video>
+                </div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>A POSITIVE, JOYFUL ENCOUNTER WITH OUR WATER</h1>
+                        <a href="#contact" class="btn">Get Started</a>
+                    </div>
+                </div>
+            </section>
+
             
             <div class="highlighted-quote">
                 <p>
@@ -542,24 +596,27 @@
                     <h2>About Us</h2>
                     <div class="features">
                         <div class="feature">
-                            <i class="fas fa-desktop"></i>
-                            <h3>Responsive Design</h3>
-                            <p>Our designs work seamlessly across all devices.</p>
+                            <i class="fas fa-bullseye"></i>
+                            <h3>Our Vision</h3>
+                            <p>We're more than just a water provider. We are devoted to sustainability, utilizing environmentally friendly production techniques and decreasing waste through creative packaging solutions. By pursuing ecologically friendly methods, we want to lower our carbon footprint while providing clean, refreshing water to our clients</p>
                         </div>
                         <div class="feature">
-                            <i class="fas fa-heart"></i>
-                            <h3>Made with Love</h3>
-                            <p>We put our heart into every project we undertake.</p>
+                            <i class="fas fa-shield-alt"></i> 
+                            <h3>Our Commitment</h3>
+                            <p>Our priority is to serve our clients with integrity and caring. We provide bespoke solutions for homes, companies, and communities, guaranteeing easy access to water that promotes health and wellness. Whether through our doorstep delivery service or community collaborations, we are motivated by the desire to improve people's daily lives by providing clean, safe drinking water.</p>
                         </div>
                         <div class="feature">
-                            <i class="fas fa-cog"></i>
-                            <h3>Easy to Customize</h3>
-                            <p>Our solutions are flexible and easy to adapt.</p>
+                            <i class="fas fa-user"></i>
+
+                            <h3>Customer-Centric Excellence</h3>
+                            <p>Our clients are the focal point of all we do. At Aventa Life Sciences, we take great pleasure in offering the finest water coupled with outstanding service. From customized hydration solutions to home delivery services, we are committed to making your interaction with us easy, convenient, and enjoyable. To make sure you get the greatest water for your lifestyle, we pay attention to your demands and customize our services.
+</p>
                         </div>
+                        
                         <div class="feature">
-                            <i class="fas fa-rocket"></i>
-                            <h3>Fast Performance</h3>
-                            <p>We optimize for speed and efficiency.</p>
+                            <i class="fa-solid fa-star"></i>
+                            <h3>Quality Assurance</h3>
+                            <p>Assurance of quality is the foundation of our business. Every step of the production process is subjected to stringent testing to guarantee adherence to global safety and purity regulations. To keep ahead of industry innovations, our team of professionals continuously checks and enhances our systems, guaranteeing that our customers receive nothing but the finest</p>
                         </div>
                     </div>
                 </div>
@@ -619,9 +676,9 @@
                             <h4>Kotha Prabhakar Reddy</h4>
                         </div>
                         <div class="testimonial">
-                            <img src="images/allu-arjun.jpg" alt="Client 3">
+                            <img src="images/SrinivasaaSilverScreen.png" alt="Client 3">
                             <p>"Exceptional customer support."</p>
-                            <h4>Ruhee Naaz</h4>
+                            <h4>SrinivasaaSilverScreen</h4>
                         </div>
                     </div>
                 </div>
@@ -663,20 +720,18 @@
                 <div class="container">
                     <h2>Contact Us</h2>
                     <div class="contact-info">
-                        <p><strong>Location:</strong> Hyderabad, India</p>
-                        <p><strong>Email:</strong> <a href="mailto:contact@vjm-sol.com">contact@vjm-sol.com</a></p>
-                        <p><strong>Phone:</strong> +91 1234567890</p>
-                        <p><strong>Office Hours:</strong> Mon-Fri, 9:00 AM - 6:00 PM</p>
-                        <p><strong>Website:</strong> <a href="https://aventalifesciences.com/" target="_blank">https://aventalifesciences.com/</a></p>
-
-                    </div>
+                        <p><strong>Location:</strong> 4th floor, Apurupa Kushi, Plot no. 44, &, Road No. 45, Guttala_Begumpet, Sri Rama Colony, Madhapur, Hyderabad, Telangana 500033</p>
+                        <p><strong>Email:</strong> <a href="mailto:Aventalife9@gmail.com">Aventalife9@gmail.com</a></p>
+                        <p><strong>Phone:</strong> +91 8977756364</p>
+                        <p><strong>Office Hours:</strong> Mon-Sat, 9:00 AM - 6:00 PM</p>
+                 </div>
                 </div>
             </section>
 
 
             <footer>
                 <div class="container">
-                    <p>&copy; 2023 Company Name. All rights reserved.</p>
+                    <p>&copy; 2023 Aventa Life Sciences. All rights reserved.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
