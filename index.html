@@ -1,897 +1,1079 @@
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Modern Company Website</title>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-            <style>
-                :root {
-                    --primary-color: #3498db;
-                    --secondary-color: #2c3e50;
-                    --text-color: #333;
-                    --light-bg: #f4f4f4;
-                }
-
-                * {
-                    margin: 0;
-                    padding: 0;
-                    box-sizing: border-box;
-                }
-
-                body {
-                    font-family: poppins, sans-serif;
-                    line-height: 1.6;
-                    color: var(--text-color);
-                }
-
-                .container {
-                    width: 90%;
-                    max-width: 1200px;
-                    margin: 0 auto;
-                }
-
-                /* Header */
-                header {
-                    background-color: var(--secondary-color);
-                    color: #fff;
-                    padding: 1rem 0;
-                    position: fixed;
-                    width: 100%;
-                    z-index: 1000;
-                }
-
-                nav {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-
-                .logo {
-                    font-size: 1.5rem;
-                    font-weight: bold;
-                }
-
-                .nav-links {
-                    display: flex;
-                    list-style: none;
-                }
-
-                .nav-links li {
-                    margin-left: 1.5rem;
-                }
-
-                .nav-links a {
-                    color: #fff;
-                    text-decoration: none;
-                    transition: color 0.3s ease;
-                }
-
-                .nav-links a:hover {
-                    color: var(--primary-color);
-                }
-
-                /* Hero Section */
-                .hero {
-                    position: relative;
-                    height: 100vh;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    text-align: center;
-                    color: white;
-                }
-
-                .video-container {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    overflow: hidden;
-                    z-index: -1;
-                }
-
-                video {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    opacity: 0.8; /* Adjust this for transparency */
-                }
-
-
-
-                  .hero .container {
-                    text-align: center;
-                  }
-
-                  .hero h1 {
-                    font-size: 48px;
-                    margin-bottom: 20px;
-                  }
-
-                  .hero p {
-                    font-size: 20px;
-                    margin-bottom: 30px;
-                  }
-
-                  .hero .btn {
-                    padding: 15px 30px;
-                    background-color: #2c3e50;
-                    color: white;
-                    text-decoration: none;
-                    border-radius: 5px;
-                    transition: background-color 0.3s;
-                  }
-
-                  .hero .btn:hover {
-                    background-color: #2A9558; /* Slightly darker green on hover */
-                  }
-                    .highlighted-quote {
-                        background: linear-gradient(135deg, #e1bee7, #ffffff); /* Light lavender to white */
-
-
-                        border-radius: 8px; /* Rounded corners */
-                        border-left: 4px solid #3BB77E; /* Greenish border to emphasize the division */
-                        padding: 20px; /* Increased padding for better spacing */
-                        margin: 20px 0;
-                        font-style: italic; /* Italic style */
-                        color: #333; /* Text color */
-                        font-size: 1.5em; /* Increase the font size */
-                        text-align: center; /* Center the text */
-                        animation: fadeIn 2s; /* Animation effect */
-                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-                        transition: transform 0.3s; /* Smooth transition for scaling effect */
-                    }
-
-                    /* Animation keyframes */
-                    @keyframes fadeIn {
-                        0% {
-                            opacity: 0; /* Start fully transparent */
-                            transform: translateY(20px); /* Start slightly below */
-                        }
-                        100% {
-                            opacity: 1; /* End fully opaque */
-                            transform: translateY(0); /* End at original position */
-                        }
-                    }
-
-                    /* Hover effect */
-                    .highlighted-quote:hover {
-                        transform: scale(1.05); /* Slightly enlarge on hover */
-                        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-                    }
-                .highlighted-quote {
-                    background: linear-gradient(135deg, #e1bee7, #ffffff); /* Light lavender to white */
-
-
-                    border-radius: 8px; /* Rounded corners */
-                    border-left: 4px solid #3BB77E; /* Greenish border to emphasize the division */
-                    padding: 20px; /* Increased padding for better spacing */
-                    margin: 20px 0;
-                    font-style: italic; /* Italic style */
-                    color: #333; /* Text color */
-                    font-size: 1.5em; /* Increase the font size */
-                    text-align: center; /* Center the text */
-                    animation: fadeIn 2s; /* Animation effect */
-                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-                    transition: transform 0.3s; /* Smooth transition for scaling effect */
-                }
-
-                /* Animation keyframes */
-                @keyframes fadeIn {
-                    0% {
-                        opacity: 0; /* Start fully transparent */
-                        transform: translateY(20px); /* Start slightly below */
-                    }
-                    100% {
-                        opacity: 1; /* End fully opaque */
-                        transform: translateY(0); /* End at original position */
-                    }
-                }
-
-                /* Hover effect */
-                .highlighted-quote:hover {
-                    transform: scale(1.05); /* Slightly enlarge on hover */
-                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-                }
-
-                /* Sections */
-                section {
-                    padding: 5rem 0;
-                }
-
-                section h2 {
-                    text-align: center;
-                    margin-bottom: 3rem;
-                }
-
-                /* About Section */
-                .features {
-                    display: flex;
-                    justify-content: space-between;
-                    flex-wrap: wrap;
-                }
-
-                .feature {
-                    flex-basis: calc(25% - 2rem);
-                    text-align: center;
-                    margin-bottom: 2rem;
-                }
-
-                .feature i {
-                    font-size: 3rem;
-                    color: var(--primary-color);
-                    margin-bottom: 1rem;
-                }
-
-                /* Team Section */
-                #team {
-                    padding: 50px 0;
-                    background-color: #f9f9f9;
-                    text-align: center;
-                }
-
-                #team h2 {
-                    color: #2c3e50;
-                    font-size: 36px;
-                    margin-bottom: 40px;
-                }
-
-                .team-members {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                }
-
-                .team-member {
-                    width: 30%; /* 30% width to allow 3 in a row */
-                    margin-bottom: 30px;
-                    text-align: center;
-                    padding: 20px;
-                    background-color: #fff;
-                    border-radius: 8px;
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                    transition: transform 0.3s ease;
-                }
-
-                .team-member:hover {
-                    transform: scale(1.05);
-                }
-
-                .team-member img {
-                    width: 100%;
-                    height: auto;
-                    border-radius: 8px;
-                    margin-bottom: 20px;
-                }
-
-                .team-member h3 {
-                    font-size: 22px;
-                    color: #333;
-                    margin-bottom: 10px;
-                }
-
-                .team-member p {
-                    font-size: 16px;
-                    color: #666;
-                }
-
-                /* Responsive design */
-                @media (max-width: 1024px) {
-                    .team-member {
-                        width: 45%; /* 2 in a row for tablets */
-                    }
-                }
-
-                @media (max-width: 768px) {
-                    .team-member {
-                        width: 100%; /* 1 in a row for mobile */
-                    }
-                }
-
-
-                /* Testimonials Section */
-                .testimonials {
-                    padding: 50px 0;
-                    background-color: #f9f9f9;
-                    text-align: center;
-                }
-
-                .testimonials h2 {
-                    font-size: 36px;
-                    margin-bottom: 40px;
-                    color: #2c3e50;
-                }
-
-                .testimonial-container {
-                    display: flex;
-                    overflow: hidden; /* Hide overflow */
-                    width: 100%;
-                    position: relative;
-                }
-
-                .testimonial {
-                    min-width: 100%; /* Each testimonial takes up the full width */
-                    transition: transform 0.8s ease-in-out; /* Smooth transition */
-                    padding: 20px;
-                }
-
-                .testimonial img {
-                    width: 100px;
-                    height: 100px;
-                    border-radius: 50%;
-                    margin-bottom: 20px;
-                }
-
-                .testimonial p {
-                    font-size: 18px;
-                    color: #666;
-                    margin-bottom: 10px;
-                }
-
-                .testimonial h4 {
-                    font-size: 22px;
-                    color: #333;
-                }
-
-                /* Navigation buttons */
-                .testimonial-nav {
-                    display: flex;
-                    justify-content: center;
-                    margin-top: 20px;
-                }
-
-                .testimonial-nav button {
-                    background-color: #3BB77E;
-                    color: white;
-                    padding: 10px 20px;
-                    border: none;
-                    cursor: pointer;
-                    margin: 0 10px;
-                    border-radius: 5px;
-                    font-size: 16px;
-                }
-
-                .testimonial-nav button:hover {
-                    background-color: #2a9b63;
-                }
-
-
-                /* Contact Section */
-                #contact {
-                    background-color: #f9f9f9;
-                    padding: 50px 0;
-                    text-align: center;
-                }
-
-                #contact h2 {
-                    font-size: 36px;
-                    color: #2c3e50;
-                    margin-bottom: 20px;
-                }
-
-                .contact-info {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
-
-                .contact-item {
-                    display: flex;
-                    align-items: center;
-                    font-size: 18px;
-                    margin: 15px 0;
-                }
-
-                .contact-item i {
-                    font-size: 24px;
-                    color: #2c3e50;
-                    margin-right: 15px;
-                }
-
-                .contact-item a {
-                    color: #2c3e50;
-                    text-decoration: none;
-                }
-
-                .contact-item a:hover {
-                    text-decoration: underline;
-                }
-
-                .contact-info p {
-                    margin: 0;
-                    font-size: 18px;
-                }
-
-                .contact-info p strong {
-                    color: #333;
-                }
-
-                .contact-info a:hover {
-                    color: #3498db;
-                }
-
-
-
-                /* Footer */
-                footer {
-                    background-color: var(--secondary-color);
-                    color: #fff;
-                    text-align: center;
-                    padding: 2rem 0;
-                }
-
-                .social-links {
-                    margin-top: 1rem;
-                }
-
-                .social-links a {
-                    color: #fff;
-                    font-size: 1.5rem;
-                    margin: 0 0.5rem;
-                    transition: color 0.3s ease;
-                }
-
-                .social-links a:hover {
-                    color: var(--primary-color);
-                }
-
-                /* Responsive Design */
-                @media (max-width: 768px) {
-                    .nav-links {
-                        display: none;
-                    }
-
-                    .feature,
-                    .team-member,
-                    .testimonial {
-                        flex-basis: 100%;
-                    }
-                }
-
-                /* Additional styles for new features */
-                .scroll-indicator {
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    height: 5px;
-                    background-color: var(--primary-color);
-                    z-index: 1001;
-                }
-
-                .back-to-top {
-                    position: fixed;
-                    bottom: 20px;
-                    right: 20px;
-                    background-color: var(--primary-color);
-                    color: #fff;
-                    width: 40px;
-                    height: 40px;
-                    text-align: center;
-                    line-height: 40px;
-                    border-radius: 50%;
-                    cursor: pointer;
-                    opacity: 0;
-                    transition: opacity 0.3s ease;
-                }
-
-                .modal {
-                    display: none;
-                    position: fixed;
-                    z-index: 1002;
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(0,0,0,0.5);
-                }
-
-                .modal-content {
-                    background-color: #fff;
-                    margin: 15% auto;
-                    padding: 20px;
-                    border-radius: 5px;
-                    width: 70%;
-                    max-width: 500px;
-                }
-
-                .close {
-                    color: #aaa;
-                    float: right;
-                    font-size: 28px;
-                    font-weight: bold;
-                    cursor: pointer;
-                }
-
-                .close:hover,
-                .close:focus {
-                    color: #000;
-                    text-decoration: none;
-                    cursor: pointer;
-                }
-                .projects-section {
-                  padding: 50px 0;
-                  background-color: #f4f4f4;
-                  overflow: hidden;
-                }
-
-                .projects-container {
-                  display: flex;
-                  justify-content: flex-start;
-                  align-items: center;
-                  white-space: nowrap;
-                  animation: scroll 20s linear infinite;
-                }
-                
-
-                .client-logo {
-                  margin-right: 30px; /* Controls spacing between logos */
-                  flex-shrink: 0;
-                }
-
-                .client-logo img {
-                  max-width: 150px;
-                  height: auto;
-                  vertical-align: middle; /* Align logos centrally */
-                }
-
-                @keyframes scroll {
-                  0% {
-                    transform: translateX(100%);
-                  }
-                  100% {
-                    transform: translateX(-100%);
-                  }
-                }
-
-            </style>
-        </head>
-        <body>
-            <div class="scroll-indicator"></div>
-
-            <header>
-                <nav class="container">
-                    <div class="logo">Aventa Life Sciences</div>
-                    <ul class="nav-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#team">Our Services</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </header>
-
-            <section id="home" class="hero">
-                <div class="video-container">
-                    <video autoplay muted loop playsinline>
-                        <source src="images/demo.mp4" type="video/mp4">
-                        <!-- Use a local file for background video. YouTube embeds cannot directly play as a background video in HTML5. -->
-                    </video>
-                </div>
-                <div class="container">
-                    <div class="hero-content">
-                        <h1>A POSITIVE, JOYFUL ENCOUNTER WITH OUR WATER</h1>
-                        <a href="#contact" class="btn">Get Started</a>
-                    </div>
-                </div>
-            </section>
-
-            
-            <div class="highlighted-quote">
-                <p>
-                      <q style="font-family: 'Quicksand', sans-serif; display: block; font-style: italic;"> <b>Absolute Water Technologies has evolved into Aventa Life Sciences Pvt Ltd.</b></q>
-                </p>
-                <ul>
-                    <li>200+ SUCCESSFUL INSTALLATIONS EVERY YEAR</li>
-                </ul>
-            </div>
-
-
-
-            <section id="about">
-                <div class="container">
-                    <h2>About Us</h2>
-                    <div class="features">
-                        <div class="feature">
-                            <i class="fas fa-bullseye"></i>
-                            <h3>Our Vision</h3>
-                            <p>We're more than just a water provider. We are devoted to sustainability, utilizing environmentally friendly production techniques and decreasing waste through creative packaging solutions. By pursuing ecologically friendly methods, we want to lower our carbon footprint while providing clean, refreshing water to our clients</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-shield-alt"></i> 
-                            <h3>Our Commitment</h3>
-                            <p>Our priority is to serve our clients with integrity and caring. We provide bespoke solutions for homes, companies, and communities, guaranteeing easy access to water that promotes health and wellness. Whether through our doorstep delivery service or community collaborations, we are motivated by the desire to improve people's daily lives by providing clean, safe drinking water.</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-user"></i>
-
-                            <h3>Customer-Centric Excellence</h3>
-                            <p>Our clients are the focal point of all we do. At Aventa Life Sciences, we take great pleasure in offering the finest water coupled with outstanding service. From customized hydration solutions to home delivery services, we are committed to making your interaction with us easy, convenient, and enjoyable. To make sure you get the greatest water for your lifestyle, we pay attention to your demands and customize our services.
-</p>
-                        </div>
-                        
-                        <div class="feature">
-                            <i class="fa-solid fa-star"></i>
-                            <h3>Quality Assurance</h3>
-                            <p>Assurance of quality is the foundation of our business. Every step of the production process is subjected to stringent testing to guarantee adherence to global safety and purity regulations. To keep ahead of industry innovations, our team of professionals continuously checks and enhances our systems, guaranteeing that our customers receive nothing but the finest</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="team">
-                <div class="container">
-                    <h2>Our Services</h2>
-                    <div class="team-members">
-                        <div class="team-member">
-                            <img src="images/IMG-20241010-WA0016.jpg" alt="RO Plants">
-                            <h3>RO Plants</h3>
-                            <p>High-performance Reverse Osmosis systems designed to deliver pure, safe drinking water by removing contaminants and impurities.</p>
-                        </div>
-                        <div class="team-member">
-                            <img src="images/IMG-20241010-WA0025.jpg" alt="Water Treatment Plant">
-                            <h3>Water Treatment Plant</h3>
-                            <p>Customized systems that cater to various water purification needs, enhancing water quality for diverse applications.</p>
-                        </div>
-                        <div class="team-member">
-                            <img src="images/IMG-20241010-WA0026.jpg" alt="Water Softener">
-                            <h3>Water Softener</h3>
-                            <p>Advanced water softening systems that prevent scaling, extend the lifespan of your appliances, and improve water quality.</p>
-                        </div>
-                        <div class="team-member">
-                            <img src="images/IMG-20241010-WA0027.jpg" alt="Sewage Treatment Plant">
-                            <h3>Sewage Treatment Plant</h3>
-                            <p>Efficient and eco-friendly solutions for treating wastewater, ensuring compliance with environmental standards and reducing water pollution.</p>
-                        </div>
-                        <div class="team-member">
-                            <img src="images/heat pumps.webp" alt="Heat Pumps">
-                            <h3>Heat Pumps</h3>
-                            <p>Energy-efficient heat pumps designed to provide optimal heating and cooling, improving energy usage for residential and commercial applications.</p>
-                        </div>  
-                        <div class="team-member">
-                            <img src="images/IMG-20241010-WA0029.jpg" alt="Pressure Pumps">
-                            <h3>Pressure Pumps</h3>
-                            <p>Robust and durable pressure pumps designed to maintain optimal water flow and pressure in your plumbing systems.</p>
-                        </div>  
-                    </div>
-                </div>
-            </section>
-
-          
-            <section id="testimonials" class="testimonials">
-                <div class="container">
-                    <h2>What People Are Saying</h2>
-                    <div class="testimonial-container">
-                        <div class="testimonial">
-                            <img src="images/allu.jpeg" alt="Client 1">
-                            <p>"Great service, highly recommend!"</p>
-                            <h4>Allu Arjun</h4>
-                        </div>
-                        <div class="testimonial">
-                            <img src="images/prabakar reddy.jpeg" alt="Client 2">
-                            <p>"Fast and reliable every time."</p>
-                            <h4>Kotha Prabhakar Reddy</h4>
-                        </div>
-                        <div class="testimonial">
-                            <img src="images/SrinivasaaSilverScreen.png" alt="Client 3">
-                            <p>"Exceptional customer support."</p>
-                            <h4>SrinivasaaSilverScreen</h4>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section id="projects" class="projects-section">
-                  <h2 style="text-align: center; padding: 10px;">
-                    Our Clients
-                  </h2>
-              <div class="projects-container">
-                <div class="client-logo">
-                  <img src="images/apollo.jpeg" alt="Client 1" style="border-radius: 10px;">
-                </div>
-                <div class="client-logo">
-                  <img src="https://media.licdn.com/dms/image/v2/C4D0BAQFKo_um8Ku_kA/company-logo_200_200/company-logo_200_200/0/1631367600911?e=2147483647&v=beta&t=5Pk2hnKY0T31QGQSDs1LmaYcnB7XdEyLQmCsxOUzRP8" alt="Client 2" style="border-radius: 10px;">
-                </div>
-                <div class="client-logo">
-                  <img src="images/cult.webp" alt="Client 3" style="border-radius: 10px;">
-                </div>
-                <div class="client-logo">
-                  <img src="images/antera.jpg" alt="Client 4" style="border-radius: 10px;">
-                </div>
-                <div class="client-logo">
-                  <img src="images/earth.png" alt="Client 5" style="border-radius: 10px;">
-                </div>
-                <div class="client-logo">
-                  <img src="images/sri aditya.png" alt="Client 6" style="border-radius: 10px;">
-                </div>
-                <div class="client-logo">
-                  <img src="images/styka.svg" alt="Client 7" style="border-radius: 10px;">
-                </div>
-                <!-- Add more logos as needed -->
-              </div>
-            </section>
-
-
-            <section id="contact">
-                <div class="container">
-                    <h2>Contact Us</h2>
-                    <div class="contact-info">
-                        <p><strong>Location:</strong> 4th floor, Apurupa Kushi, Plot no. 44, &, Road No. 45, Guttala_Begumpet, Sri Rama Colony, Madhapur, Hyderabad, Telangana 500033</p>
-                        <p><strong>Email:</strong> <a href="mailto:Aventalife9@gmail.com">Aventalife9@gmail.com</a></p>
-                        <p><strong>Phone:</strong> +91 8977756364</p>
-                        <p><strong>Office Hours:</strong> Mon-Sat, 9:00 AM - 6:00 PM</p>
-                 </div>
-                </div>
-            </section>
-
-
-            <footer>
-                <div class="container">
-                    <p>&copy; 2023 Aventa Life Sciences. All rights reserved.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </footer>
-
-            <div class="back-to-top">
-                <i class="fas fa-chevron-up"></i>
-            </div>
-
-            <div id="newsletterModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>Subscribe to Our Newsletter</h2>
-                    <p>Stay updated with our latest news and offers!</p>
-                    <form id="newsletterForm">
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit" class="btn">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-          <script>
-            // Scroll indicator
-            window.addEventListener('scroll', () => {
-              const scrollIndicator = document.querySelector('.scroll-indicator');
-              const windowScroll = document.body.scrollTop || document.documentElement.scrollTop;
-              const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-              const scrolled = (windowScroll / height) * 100;
-              if (scrollIndicator) {
-                scrollIndicator.style.width = scrolled + '%';
-              }
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Company Website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --primary-color: #3498db;
+        --secondary-color: #2c3e50;
+        --text-color: #333;
+        --light-bg: #f4f4f4;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+    font-family: 'Crimson Text', serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.crimson-text-regular {
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.crimson-text-semibold {
+    font-family: "Crimson Text", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.crimson-text-bold {
+    font-family: "Crimson Text", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.crimson-text-regular-italic {
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.crimson-text-semibold-italic {
+    font-family: "Crimson Text", serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.crimson-text-bold-italic {
+    font-family: "Crimson Text", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* Header */
+      header {
+        background-color: var(--secondary-color);
+        color: #fff;
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-links li {
+        margin-left: 1.5rem;
+      }
+
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary-color);
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+      }
+
+      .video-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8; /* Adjust this for transparency */
+      }
+
+      .hero .container {
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+
+      .hero .btn {
+        padding: 15px 30px;
+        background-color: #2c3e50;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .hero .btn:hover {
+        background-color: #2a9558; /* Slightly darker green on hover */
+      }
+      .highlighted-quote {
+        background: linear-gradient(
+          135deg,
+          #e1bee7,
+          #ffffff
+        ); /* Light lavender to white */
+
+        border-radius: 8px; /* Rounded corners */
+        border-left: 4px solid #3bb77e; /* Greenish border to emphasize the division */
+        padding: 20px; /* Increased padding for better spacing */
+        margin: 20px 0;
+        font-style: italic; /* Italic style */
+        color: #333; /* Text color */
+        font-size: 1.5em; /* Increase the font size */
+        text-align: center; /* Center the text */
+        animation: fadeIn 2s; /* Animation effect */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        transition: transform 0.3s; /* Smooth transition for scaling effect */
+      }
+
+      /* Animation keyframes */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0; /* Start fully transparent */
+          transform: translateY(20px); /* Start slightly below */
+        }
+        100% {
+          opacity: 1; /* End fully opaque */
+          transform: translateY(0); /* End at original position */
+        }
+      }
+
+      /* Hover effect */
+      .highlighted-quote:hover {
+        transform: scale(1.05); /* Slightly enlarge on hover */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+      }
+      .highlighted-quote {
+        background: linear-gradient(
+          135deg,
+          #e1bee7,
+          #ffffff
+        ); /* Light lavender to white */
+
+        border-radius: 8px; /* Rounded corners */
+        border-left: 4px solid #3bb77e; /* Greenish border to emphasize the division */
+        padding: 20px; /* Increased padding for better spacing */
+        margin: 20px 0;
+        font-style: italic; /* Italic style */
+        color: #333; /* Text color */
+        font-size: 1.5em; /* Increase the font size */
+        text-align: center; /* Center the text */
+        animation: fadeIn 2s; /* Animation effect */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        transition: transform 0.3s; /* Smooth transition for scaling effect */
+      }
+
+      /* Animation keyframes */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0; /* Start fully transparent */
+          transform: translateY(20px); /* Start slightly below */
+        }
+        100% {
+          opacity: 1; /* End fully opaque */
+          transform: translateY(0); /* End at original position */
+        }
+      }
+
+      /* Hover effect */
+      .highlighted-quote:hover {
+        transform: scale(1.05); /* Slightly enlarge on hover */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+      }
+
+      /* Sections */
+      section {
+        padding: 5rem 0;
+      }
+
+      section h2 {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      /* About Section */
+      /* About Section */
+      #about {
+        padding: 50px 0;
+        background-color: #f9f9f9;
+        text-align: center;
+      }
+
+      #about h2 {
+        color: #2c3e50;
+        font-size: 36px;
+        margin-bottom: 40px;
+      }
+
+      .features {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .feature {
+        flex-basis: calc(25% - 2rem);
+        text-align: center;
+        margin-bottom: 2rem;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .feature:hover {
+        transform: scale(1.05);
+      }
+
+      .feature i {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .feature h3 {
+        font-size: 22px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .feature p {
+        font-size: 16px;
+        color: #666;
+      }
+
+      /* Responsive design */
+      @media (max-width: 1024px) {
+        .feature {
+          flex-basis: calc(50% - 2rem); /* 2 in a row for tablets */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .feature {
+          flex-basis: 100%; /* 1 in a row for mobile */
+        }
+      }
+      /* Team Section */
+      #team {
+        padding: 50px 0;
+        background-color: #f9f9f9;
+        text-align: center;
+      }
+
+      #team h2 {
+        color: #2c3e50;
+        font-size: 36px;
+        margin-bottom: 40px;
+      }
+
+      .team-members {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .team-member {
+        width: 30%; /* 30% width to allow 3 in a row */
+        margin-bottom: 30px;
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .team-member:hover {
+        transform: scale(1.05);
+      }
+
+      .team-member img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      .team-member h3 {
+        font-size: 22px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .team-member p {
+        font-size: 16px;
+        color: #666;
+      }
+
+      /* Responsive design */
+      @media (max-width: 1024px) {
+        .team-member {
+          width: 45%; /* 2 in a row for tablets */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .team-member {
+          width: 100%; /* 1 in a row for mobile */
+        }
+      }
+
+      /* Testimonials Section */
+      .testimonials {
+        padding: 50px 0;
+        background-color: #f9f9f9;
+        text-align: center;
+      }
+
+      .testimonials h2 {
+        font-size: 36px;
+        margin-bottom: 40px;
+        color: #2c3e50;
+      }
+
+      .testimonial-container {
+        display: flex;
+        overflow: hidden; /* Hide overflow */
+        width: 100%;
+        position: relative;
+      }
+
+      .testimonial {
+        min-width: 100%; /* Each testimonial takes up the full width */
+        transition: transform 0.8s ease-in-out; /* Smooth transition */
+        padding: 20px;
+      }
+
+      .testimonial img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+
+      .testimonial p {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 10px;
+      }
+
+      .testimonial h4 {
+        font-size: 22px;
+        color: #333;
+      }
+
+      /* Navigation buttons */
+      .testimonial-nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .testimonial-nav button {
+        background-color: #3bb77e;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        margin: 0 10px;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      .testimonial-nav button:hover {
+        background-color: #2a9b63;
+      }
+
+      /* Contact Section */
+      #contact {
+        background-color: #f9f9f9;
+        padding: 50px 0;
+        text-align: center;
+      }
+
+      #contact h2 {
+        font-size: 36px;
+        color: #2c3e50;
+        margin-bottom: 20px;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        margin: 15px 0;
+      }
+
+      .contact-item i {
+        font-size: 24px;
+        color: #2c3e50;
+        margin-right: 15px;
+      }
+
+      .contact-item a {
+        color: #2c3e50;
+        text-decoration: none;
+      }
+
+      .contact-item a:hover {
+        text-decoration: underline;
+      }
+
+      .contact-info p {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      .contact-info p strong {
+        color: #333;
+      }
+
+      .contact-info a:hover {
+        color: #3498db;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--secondary-color);
+        color: #fff;
+        text-align: center;
+        padding: 2rem 0;
+      }
+
+      .social-links {
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        color: #fff;
+        font-size: 1.5rem;
+        margin: 0 0.5rem;
+        transition: color 0.3s ease;
+      }
+
+      .social-links a:hover {
+        color: var(--primary-color);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .feature,
+        .team-member,
+        .testimonial {
+          flex-basis: 100%;
+        }
+      }
+
+      /* Additional styles for new features */
+      .scroll-indicator {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 5px;
+        background-color: var(--primary-color);
+        z-index: 1001;
+      }
+
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--primary-color);
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1002;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-content {
+        background-color: #fff;
+        margin: 15% auto;
+        padding: 20px;
+        border-radius: 5px;
+        width: 70%;
+        max-width: 500px;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .projects-section {
+        padding: 50px 0;
+        background: linear-gradient(
+          135deg,
+          #e1bee7,
+          #ffffff
+        );
+        overflow: hidden;
+      }
+
+      .projects-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        white-space: nowrap;
+        animation: scroll 20s linear infinite;
+      }
+
+      .client-logo {
+        margin-right: 30px; /* Controls spacing between logos */
+        flex-shrink: 0;
+      }
+
+      .client-logo img {
+        max-width: 150px;
+        height: auto;
+        vertical-align: middle; /* Align logos centrally */
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scroll-indicator"></div>
+
+    <header>
+      <nav class="container">
+        <div class="logo">Aventa Life Sciences PVT LTD</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#team">Our Services</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="video-container">
+        <video autoplay muted loop playsinline>
+          <source src="images/demo.mp4" type="video/mp4" />
+          <!-- Use a local file for background video. YouTube embeds cannot directly play as a background video in HTML5. -->
+        </video>
+      </div>
+      <div class="container">
+        <div class="hero-content ">
+          <h1> Innovations for a sustainable future </h1>
+           <h1> Water and environment managementsolutions</h1>
+          <a href="#contact" class="btn">Get Started</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="highlighted-quote">
+      <p>
+        <q
+          style="
+            font-family: 'Quicksand', sans-serif;
+            display: block;
+            font-style: italic;
+          "
+        >
+          <b
+            >Absolute Water Technologies has evolved into Aventa Life Sciences
+            Pvt Ltd.</b
+          ></q
+        >
+      </p>
+      <ul>
+        <li>200+ SUCCESSFUL INSTALLATIONS EVERY YEAR</li>
+      </ul>
+    </div>
+
+    <section id="team">
+      <div class="container">
+        <h2>Our Services</h2>
+        <div class="team-members">
+          <div class="team-member">
+            <img src="images/IMG-20241010-WA0016.jpg" alt="RO Plants" />
+            <h3>RO Plants</h3>
+            <p>
+              High-performance Reverse Osmosis systems designed to deliver pure,
+              safe drinking water by removing contaminants and impurities.
+            </p>
+          </div>
+          <div class="team-member">
+            <img
+              src="images/IMG-20241010-WA0025.jpg"
+              alt="Water Treatment Plant"
+            />
+            <h3>Water Treatment Plant</h3>
+            <p>
+              Customized systems that cater to various water purification needs,
+              enhancing water quality for diverse applications.
+            </p>
+          </div>
+          <div class="team-member">
+            <img src="images/IMG-20241010-WA0026.jpg" alt="Water Softener" />
+            <h3>Water Softener</h3>
+            <p>
+              Advanced water softening systems that prevent scaling, extend the
+              lifespan of your appliances, and improve water quality.
+            </p>
+          </div>
+          <div class="team-member">
+            <img
+              src="images/IMG-20241010-WA0027.jpg"
+              alt="Sewage Treatment Plant"
+            />
+            <h3>Sewage Treatment Plant</h3>
+            <p>
+              Efficient and eco-friendly solutions for treating wastewater,
+              ensuring compliance with environmental standards and reducing
+              water pollution.
+            </p>
+          </div>
+          <div class="team-member">
+            <img src="images/heat pumps.webp" alt="Heat Pumps" />
+            <h3>Heat Pumps</h3>
+            <p>
+              Energy-efficient heat pumps designed to provide optimal heating
+              and cooling, improving energy usage for residential and commercial
+              applications.
+            </p>
+          </div>
+          <div class="team-member">
+            <img src="images/IMG-20241010-WA0029.jpg" alt="Pressure Pumps" />
+            <h3>Pressure Pumps</h3>
+            <p>
+              Robust and durable pressure pumps designed to maintain optimal
+              water flow and pressure in your plumbing systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2>About Us</h2>
+        <div class="features">
+          <div class="feature">
+            <i class="fas fa-bullseye"></i>
+            <h3>Our Vision</h3>
+            <p>
+              We're more than just a water provider. We are devoted to
+              sustainability, utilizing environmentally friendly production
+              techniques and decreasing waste through creative packaging
+              solutions. By pursuing ecologically friendly methods, we want to
+              lower our carbon footprint while providing clean, refreshing water
+              to our clients
+            </p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Our Commitment</h3>
+            <p>
+              Our priority is to serve our clients with integrity and caring. We
+              provide bespoke solutions for homes, companies, and communities,
+              guaranteeing easy access to water that promotes health and
+              wellness. Whether through our doorstep delivery service or
+              community collaborations, we are motivated by the desire to
+              improve people's daily lives by providing clean, safe drinking
+              water.
+            </p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-user"></i>
+
+            <h3>Customer-Centric Excellence</h3>
+            <p>
+              Our clients are the focal point of all we do. At Aventa Life
+              Sciences, we take great pleasure in offering the finest water
+              coupled with outstanding service. From customized hydration
+              solutions to home delivery services, we are committed to making
+              your interaction with us easy, convenient, and enjoyable. To make
+              sure you get the greatest water for your lifestyle, we pay
+              attention to your demands and customize our services.
+            </p>
+          </div>
+
+          <div class="feature">
+            <i class="fa-solid fa-star"></i>
+            <h3>Quality Assurance</h3>
+            <p>
+              Assurance of quality is the foundation of our business. Every step
+              of the production process is subjected to stringent testing to
+              guarantee adherence to global safety and purity regulations. To
+              keep ahead of industry innovations, our team of professionals
+              continuously checks and enhances our systems, guaranteeing that
+              our customers receive nothing but the finest
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <h2>What People Are Saying</h2>
+        <div class="testimonial-container">
+          <div class="testimonial">
+            <img src="images/allu.jpeg" alt="Client 1" />
+            <p>"Great service, highly recommend!"</p>
+            <h4>Allu Arjun</h4>
+          </div>
+          <div class="testimonial">
+            <img src="images/prabakar reddy.jpeg" alt="Client 2" />
+            <p>"Fast and reliable every time."</p>
+            <h4>Kotha Prabhakar Reddy</h4>
+          </div>
+          <div class="testimonial">
+            <img src="images/SrinivasaaSilverScreen.png" alt="Client 3" />
+            <p>"Exceptional customer support."</p>
+            <h4>SrinivasaaSilverScreen</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+      <h2 style="text-align: center; padding: 10px">Our Clients</h2>
+      <div class="projects-container">
+        <div class="client-logo">
+          <img
+            src="images/apollo.jpeg"
+            alt="Client 1"
+            style="border-radius: 10px"
+          />
+        </div>
+        <div class="client-logo">
+          <img
+            src="https://media.licdn.com/dms/image/v2/C4D0BAQFKo_um8Ku_kA/company-logo_200_200/company-logo_200_200/0/1631367600911?e=2147483647&v=beta&t=5Pk2hnKY0T31QGQSDs1LmaYcnB7XdEyLQmCsxOUzRP8"
+            alt="Client 2"
+            style="border-radius: 10px"
+          />
+        </div>
+        <div class="client-logo">
+          <img
+            src="images/cult.webp"
+            alt="Client 3"
+            style="border-radius: 10px"
+          />
+        </div>
+        <div class="client-logo">
+          <img
+            src="images/antera.jpg"
+            alt="Client 4"
+            style="border-radius: 10px"
+          />
+        </div>
+        <div class="client-logo">
+          <img
+            src="images/earth.png"
+            alt="Client 5"
+            style="border-radius: 10px"
+          />
+        </div>
+        <div class="client-logo">
+          <img
+            src="images/sri aditya.png"
+            alt="Client 6"
+            style="border-radius: 10px"
+          />
+        </div>
+        <div class="client-logo">
+          <img src="images/styka 1.jpeg" alt="Client 7" style="border-radius: 10px;">
+        <!-- Add more logos as needed -->
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+          <p>
+            <strong>Location:</strong> 4th floor, Apurupa Kushi, Plot no. 44, &,
+            Road No. 45, Guttala_Begumpet, Sri Rama Colony, Madhapur, Hyderabad,
+            Telangana 500033
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:Aventalife9@gmail.com">Aventalife9@gmail.com</a>
+          </p>
+          <p><strong>Phone:</strong> +91 8977756364</p>
+          <p><strong>Office Hours:</strong> Mon-Sat, 9:00 AM - 6:00 PM</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2023 Aventa Life Sciences. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <div id="newsletterModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Stay updated with our latest news and offers!</p>
+        <form id="newsletterForm">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit" class="btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      // Scroll indicator
+      window.addEventListener("scroll", () => {
+        const scrollIndicator = document.querySelector(".scroll-indicator");
+        const windowScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (windowScroll / height) * 100;
+        if (scrollIndicator) {
+          scrollIndicator.style.width = scrolled + "%";
+        }
+      });
+
+      // Smooth scroll for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Back to top button
+      const backToTop = document.querySelector(".back-to-top");
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTop.style.opacity = "1";
+        } else {
+          backToTop.style.opacity = "0";
+        }
+      });
+
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Lazy loading images
+      const images = document.querySelectorAll("img.lazy");
+      const options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.classList.remove("lazy");
+            imageObserver.unobserve(img);
+          }
+        });
+      }, options);
+
+      images.forEach((img) => imageObserver.observe(img));
+
+      // Form submission with fetch API
+      const contactForm = document.querySelector(".contact-form");
+      if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const formData = new FormData(contactForm);
+          fetch("/submit-form", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              alert(
+                "Thank you for your message. We will get back to you soon!"
+              );
+              contactForm.reset();
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert(
+                "There was an error submitting your message. Please try again."
+              );
             });
+        });
+      }
 
-            // Smooth scroll for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-              anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                  behavior: 'smooth'
-                });
-              });
+      // Dynamic content loading
+      const loadMoreBtn = document.createElement("button");
+
+      loadMoreBtn.classList.add("btn");
+      document
+        .querySelector("#testimonials .container")
+        .appendChild(loadMoreBtn);
+
+      loadMoreBtn.addEventListener("click", () => {
+        fetch("/api/testimonials")
+          .then((response) => response.json())
+          .then((data) => {
+            const testimonialContainer = document.querySelector(
+              ".testimonial-container"
+            );
+            data.forEach((testimonial) => {
+              const testimonialElement = document.createElement("div");
+              testimonialElement.classList.add("testimonial");
+              testimonialElement.innerHTML = `
+              <img src="${testimonial.image}" alt="${testimonial.name}">
+              <p>"${testimonial.text}"</p>
+              <h4>${testimonial.name}</h4>
+            `;
+              testimonialContainer.appendChild(testimonialElement);
             });
+          })
+          .catch((error) => console.error("Error:", error));
+      });
 
-            // Back to top button
-            const backToTop = document.querySelector('.back-to-top');
-            window.addEventListener('scroll', () => {
-              if (window.pageYOffset > 300) {
-                backToTop.style.opacity = '1';
-              } else {
-                backToTop.style.opacity = '0';
-              }
-            });
+      // Scrolling testimonials
+      let currentScrollPosition = 0;
+      const scrollContainer = document.querySelector(".testimonials-container");
+      const scrollAmount = 300;
 
-            backToTop.addEventListener('click', () => {
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
+      let currentSlide = 0;
+      const testimonials = document.querySelectorAll(".testimonial");
+      const totalSlides = testimonials.length;
 
-            // Lazy loading images
-            const images = document.querySelectorAll('img.lazy');
-            const options = {
-              root: null,
-              rootMargin: '0px',
-              threshold: 0.1
-            };
+      function autoSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides; // Move to the next slide, loop back at the end
+        updateSlides();
+      }
 
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-              entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                  const img = entry.target;
-                  img.src = img.dataset.src;
-                  img.classList.remove('lazy');
-                  imageObserver.unobserve(img);
-                }
-              });
-            }, options);
+      function updateSlides() {
+        const offset = -currentSlide * 100; // Calculate the offset for sliding
+        testimonials.forEach((testimonial) => {
+          testimonial.style.transform = `translateX(${offset}%)`;
+        });
+      }
 
-            images.forEach(img => imageObserver.observe(img));
-
-
-
-            // Form submission with fetch API
-            const contactForm = document.querySelector('.contact-form');
-            if (contactForm) {
-              contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const formData = new FormData(contactForm);
-                fetch('/submit-form', {
-                  method: 'POST',
-                  body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                  alert('Thank you for your message. We will get back to you soon!');
-                  contactForm.reset();
-                })
-                .catch(error => {
-                  console.error('Error:', error);
-                  alert('There was an error submitting your message. Please try again.');
-                });
-              });
-            }
-
-            // Dynamic content loading
-            const loadMoreBtn = document.createElement('button');
-           
-            loadMoreBtn.classList.add('btn');
-            document.querySelector('#testimonials .container').appendChild(loadMoreBtn);
-
-            loadMoreBtn.addEventListener('click', () => {
-              fetch('/api/testimonials')
-                .then(response => response.json())
-                .then(data => {
-                  const testimonialContainer = document.querySelector('.testimonial-container');
-                  data.forEach(testimonial => {
-                    const testimonialElement = document.createElement('div');
-                    testimonialElement.classList.add('testimonial');
-                    testimonialElement.innerHTML = `
-                      <img src="${testimonial.image}" alt="${testimonial.name}">
-                      <p>"${testimonial.text}"</p>
-                      <h4>${testimonial.name}</h4>
-                    `;
-                    testimonialContainer.appendChild(testimonialElement);
-                  });
-                })
-                .catch(error => console.error('Error:', error));
-            });
-
-            // Scrolling testimonials
-            let currentScrollPosition = 0;
-            const scrollContainer = document.querySelector('.testimonials-container');
-            const scrollAmount = 300;
-
-              let currentSlide = 0;
-              const testimonials = document.querySelectorAll('.testimonial');
-              const totalSlides = testimonials.length;
-
-              function autoSlide() {
-                  currentSlide = (currentSlide + 1) % totalSlides; // Move to the next slide, loop back at the end
-                  updateSlides();
-              }
-
-              function updateSlides() {
-                  const offset = -currentSlide * 100; // Calculate the offset for sliding
-                  testimonials.forEach(testimonial => {
-                      testimonial.style.transform = `translateX(${offset}%)`;
-                  });
-              }
-
-              // Automatically slide every 2 seconds
-              setInterval(autoSlide, 2000);
-              window.onload = function() {
-                  const quote = document.getElementById('quote');
-                  // Trigger the animation
-                  quote.style.opacity = '25'; // Make the quote visible
-                  quote.style.transform = 'translateY(0)'; // Move to original position
-              };
-
-          </script>
-          </body>
-         </html>
+      // Automatically slide every 2 seconds
+      setInterval(autoSlide, 2000);
+      window.onload = function () {
+        const quote = document.getElementById("quote");
+        // Trigger the animation
+        quote.style.opacity = "25"; // Make the quote visible
+        quote.style.transform = "translateY(0)"; // Move to original position
+      };
+    </script>
+  </body>
+</html>
