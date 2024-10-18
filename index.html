@@ -65,11 +65,42 @@
     font-style: italic;
 }
 
-      .container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
+.container {
+    width: 100%;
+    max-width: 1200px; /* Set a proper max-width value */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding to the container */
+}
+
+.features {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between feature cards */
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    margin: 0 -10px; /* Negative margin to counteract feature margin */
+}
+
+.feature {
+    background-color: white; /* Card background color */
+    border: 1px solid #e0e0e0; /* Optional border for visual separation */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Reduced padding inside the feature cards */
+    margin: 10px; /* Adjust margin around the feature cards */
+    flex: 1 1 30%; /* Flexible width; allows 3 items in a row */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+.feature h3 {
+    margin: 10px 0; /* Adjust heading margin */
+}
+
+.feature p {
+    margin: 5px 0; /* Adjust paragraph margin */
+}
+
+.feature ul {
+    margin: 5px 0; /* Adjust margin for unordered list */
+    padding-left: 20px; /* Add padding to the left of the list */
+}
 
       /* Header */
       header {
@@ -653,14 +684,14 @@
     <section id="home" class="hero">
       <div class="video-container">
         <video autoplay muted loop playsinline>
-          <source src="images/demo.mp4" type="video/mp4" />
+          <source src="images/bg.mp4" type="video/mp4" />
           <!-- Use a local file for background video. YouTube embeds cannot directly play as a background video in HTML5. -->
         </video>
       </div>
       <div class="container">
         <div class="hero-content ">
           <h1> Innovations for a sustainable future </h1>
-           <h1> Water and environment managementsolutions</h1>
+           <h1> Water and environment management solutions</h1>
           <a href="#contact" class="btn">Get Started</a>
         </div>
       </div>
@@ -752,82 +783,59 @@
 
     <section id="about">
       <div class="container">
-        <h2>About Us</h2>
-        <div class="features">
-          <div class="feature">
-            <i class="fas fa-bullseye"></i>
-            <h3>Our Vision</h3>
-            <p>
-              We're more than just a water provider. We are devoted to
-              sustainability, utilizing environmentally friendly production
-              techniques and decreasing waste through creative packaging
-              solutions. By pursuing ecologically friendly methods, we want to
-              lower our carbon footprint while providing clean, refreshing water
-              to our clients
-            </p>
+          <h2>About Us</h2>
+          <div class="features">
+              <div class="feature">
+                  <i class="fas fa-info-circle"></i>
+                  <h3>Our Story</h3>
+                  <p>
+                      Aventa comprises Absolute Water Technologies, a 5-year-old trading firm. Aventa Life Sciences Pvt Ltd is a project company that has now emerged as the most trusted name in the water treatment industry, with a passion for delivering clean and safe water.
+                  </p>
+              </div>
+  
+              <div class="feature">
+                  <i class="fas fa-route"></i>
+                  <h3>Our Journey</h3>
+                  <ul> <!-- Changed <ui> to <ul> for unordered list -->
+                      <li>Over the past 5 years, we have completed 600+ successful projects across 4 states.</li>
+                      <li>Built a strong network of channel partners and employees.</li>
+                  </ul>
+              </div>
+  
+              <div class="feature">
+                  <i class="fas fa-users"></i>
+                  <h3>Our Community</h3>
+                  <p>
+                      Our team is successfully providing innovative, eco-friendly, cost-effective, and high-quality water treatment solutions to residential, commercial, and industrial clients across Telangana, Andhra Pradesh, Maharashtra, and Karnataka.
+                  </p>
+              </div>
           </div>
-          <div class="feature">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Our Commitment</h3>
-            <p>
-              Our priority is to serve our clients with integrity and caring. We
-              provide bespoke solutions for homes, companies, and communities,
-              guaranteeing easy access to water that promotes health and
-              wellness. Whether through our doorstep delivery service or
-              community collaborations, we are motivated by the desire to
-              improve people's daily lives by providing clean, safe drinking
-              water.
-            </p>
-          </div>
-          <div class="feature">
-            <i class="fas fa-user"></i>
-
-            <h3>Customer-Centric Excellence</h3>
-            <p>
-              Our clients are the focal point of all we do. At Aventa Life
-              Sciences, we take great pleasure in offering the finest water
-              coupled with outstanding service. From customized hydration
-              solutions to home delivery services, we are committed to making
-              your interaction with us easy, convenient, and enjoyable. To make
-              sure you get the greatest water for your lifestyle, we pay
-              attention to your demands and customize our services.
-            </p>
-          </div>
-
-          <div class="feature">
-            <i class="fa-solid fa-star"></i>
-            <h3>Quality Assurance</h3>
-            <p>
-              Assurance of quality is the foundation of our business. Every step
-              of the production process is subjected to stringent testing to
-              guarantee adherence to global safety and purity regulations. To
-              keep ahead of industry innovations, our team of professionals
-              continuously checks and enhances our systems, guaranteeing that
-              our customers receive nothing but the finest
-            </p>
-          </div>
-        </div>
       </div>
-    </section>
+  </section>
+  
 
     <section id="testimonials" class="testimonials">
       <div class="container">
-        <h2>What People Are Saying</h2>
+        <h2> Our partners </h2>
         <div class="testimonial-container">
           <div class="testimonial">
             <img src="images/allu.jpeg" alt="Client 1" />
-            <p>"Great service, highly recommend!"</p>
-            <h4>Allu Arjun</h4>
+            <p>" Dr. Shruthi Madishetty has experience around 8 years in scientific water devices industry"</p>
+            <h4> Dr. Shruthi Madishetty</h4>
+            <h5>Managing director</h5>
           </div>
           <div class="testimonial">
             <img src="images/prabakar reddy.jpeg" alt="Client 2" />
-            <p>"Fast and reliable every time."</p>
-            <h4>Kotha Prabhakar Reddy</h4>
+            <p>" Mr.shrikar jaji civil engineer with more than 10years of experience in this field and successfully handled 200+ prestigious projects 
+              "</p>
+            <h4> Mr.shrikar jaji</h4>
+            <h5>Additional director</h5>
           </div>
           <div class="testimonial">
             <img src="images/SrinivasaaSilverScreen.png" alt="Client 3" />
-            <p>"Exceptional customer support."</p>
-            <h4>SrinivasaaSilverScreen</h4>
+            <p>" Ms. A.Shivani Reddy has experience of 5 years in water treatment industry and handled more than 350+ projects"</p>
+            <h4> Ms. A.Shivani Reddy</h4>
+            <h5>Co- founder</h5>
           </div>
         </div>
       </div>
