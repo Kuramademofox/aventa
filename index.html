@@ -663,6 +663,47 @@
           transform: translateX(-100%);
         }
       }
+      .partners-section {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+.partners-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.partners-slider {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.partners-track {
+  display: flex;
+  animation: slide 30s linear infinite;
+}
+
+.partner-logo {
+  flex: 0 0 auto;
+  margin: 0 20px;
+}
+
+.partner-logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
     </style>
   </head>
   <body>
@@ -722,7 +763,7 @@
         <h2>Our Services</h2>
         <div class="team-members">
           <div class="team-member">
-            <img src="images/IMG-20241010-WA0016.jpg" alt="RO Plants" />
+            <img src="images/Ro waters.jpg" alt="RO Plants" />
             <h3>RO Plants</h3>
             <p>
               High-performance Reverse Osmosis systems designed to deliver pure,
@@ -741,7 +782,7 @@
             </p>
           </div>
           <div class="team-member">
-            <img src="images/IMG-20241010-WA0026.jpg" alt="Water Softener" />
+            <img src="images/softener.jpg" alt="Water Softener" />
             <h3>Water Softener</h3>
             <p>
               Advanced water softening systems that prevent scaling, extend the
@@ -761,7 +802,7 @@
             </p>
           </div>
           <div class="team-member">
-            <img src="images/heat pumps.webp" alt="Heat Pumps" />
+            <img src="images/heat pumps.jpg" alt="Heat Pumps" />
             <h3>Heat Pumps</h3>
             <p>
               Energy-efficient heat pumps designed to provide optimal heating
@@ -813,10 +854,11 @@
       </div>
   </section>
   
+  
 
     <section id="testimonials" class="testimonials">
       <div class="container">
-        <h2> Our partners </h2>
+        <h2> Our Promoters </h2>
         <div class="testimonial-container">
           <div class="testimonial">
             <img src="images/allu.jpeg" alt="Client 1" />
@@ -833,7 +875,31 @@
           </div>
           <div class="testimonial">
             <img src="images/SrinivasaaSilverScreen.png" alt="Client 3" />
-            <p>" Ms. A.Shivani Reddy has experience of 5 years in water treatment industry and handled more than 350+ projects"</p>
+            <p>" Ms. A.Shivani Reddy has experience of 5 years in water treatment industry and handled more than 350+ projects"</p>
+            <h4> Ms. A.Shivani Reddy</h4>
+            <h5>Co- founder</h5>
+          </div>
+          <div class="testimonial">
+            <img src="images/SrinivasaaSilverScreen.png" alt="Client 3" />
+            <p>" Ms. A.Shivani Reddy has experience of 5 years in water treatment industry and handled more than 350+ projects"</p>
+            <h4> Ms. A.Shivani Reddy</h4>
+            <h5>Co- founder</h5>
+          </div>
+          <div class="testimonial">
+            <img src="images/SrinivasaaSilverScreen.png" alt="Client 3" />
+            <p>" Ms. A.Shivani Reddy has experience of 5 years in water treatment industry and handled more than 350+ projects"</p>
+            <h4> Ms. A.Shivani Reddy</h4>
+            <h5>Co- founder</h5>
+          </div>
+          <div class="testimonial">
+            <img src="images/SrinivasaaSilverScreen.png" alt="Client 3" />
+            <p>" Ms. A.Shivani Reddy has experience of 5 years in water treatment industry and handled more than 350+ projects"</p>
+            <h4> Ms. A.Shivani Reddy</h4>
+            <h5>Co- founder</h5>
+          </div>
+          <div class="testimonial">
+            <img src="images/SrinivasaaSilverScreen.png" alt="Client 3" />
+            <p>" Ms. A.Shivani Reddy has experience of 5 years in water treatment industry and handled more than 350+ projects"</p>
             <h4> Ms. A.Shivani Reddy</h4>
             <h5>Co- founder</h5>
           </div>
@@ -842,7 +908,7 @@
     </section>
 
     <section id="projects" class="projects-section">
-      <h2 style="text-align: center; padding: 10px">Our Clients</h2>
+      <h2 style="text-align: center; padding: 10px">Our projects</h2>
       <div class="projects-container">
         <div class="client-logo">
           <img
@@ -888,7 +954,21 @@
         </div>
         <div class="client-logo">
           <img src="images/styka 1.jpeg" alt="Client 7" style="border-radius: 10px;">
-        <!-- Add more logos as needed -->
+      </div>
+      <div class="client-logo">
+        <img
+          src="images/Millet express.png"
+          alt="Client 6"
+          style="border-radius: 10px"
+        />
+      </div>
+      <div class="client-logo">
+        <img
+          src="images/manbhum.png"
+          alt="Client 6"
+          style="border-radius: 10px"
+        />
+         <!-- Add more logos as needed -->
       </div>
     </section>
 
@@ -1082,6 +1162,18 @@
         quote.style.opacity = "25"; // Make the quote visible
         quote.style.transform = "translateY(0)"; // Move to original position
       };
+      document.addEventListener('DOMContentLoaded', (event) => {
+  const track = document.querySelector('.partners-track');
+  
+  // Pause animation on hover
+  track.addEventListener('mouseenter', () => {
+    track.style.animationPlayState = 'paused';
+  });
+  
+  track.addEventListener('mouseleave', () => {
+    track.style.animationPlayState = 'running';
+  });
+});
     </script>
   </body>
 </html>
